@@ -1,74 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>My Portfolio</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        
+    
     </head>
-    <body>
-        <header>
-            <h1>Londiwe Myeza</h1>
-            <p>Future Full-Stack Developer</p>
-        </header>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-            </ul>
-        </nav>
-        <main>
-            <section id="about">
-                <h2>About Me</h2>
-                <p>My name is <strong>Londiwe Myeza</strong>, born and raised in Durban, South Africa, and I am currently pursuing my BCom in Accounting at the University of KwaZulu-Natal (UKZN). When I was accepted into UKZN, I had to choose between Accounting and Computer Science. Honestly, I chose Accounting because of the career opportunities and, after doing some research, I was relieved to hear there was less mathematics, especially coming from a Mathematics, Physical Sciences, and Chemistry background. However, as I progressed, I realised that although I could do Accounting, I did not enjoy its repetitive nature. Ironically, the modules I enjoyed most were </strong>Information Systems and Technology, Statistics, and Machine Learning</strong>, where I not only performed well but also found myself helping other students with their computer skills. That experience made me realise that I may have chosen the practical path, but technology was where my interest really was.</p>
-                <p>My interest in technology is not something I discovered overnight. Growing up, I enjoyed building LEGO, solving puzzles, playing games, and figuring out how things worked. I have always been hands-on, curious, and creative, and I enjoy turning ideas into something real. After being financially excluded from university in 2026 due to historical debt, I had to step back and rethink my direction. Instead of seeing this as the end of my journey, I decided to use it as an opportunity to pursue something I genuinely enjoy. Software development combines creativity, problem-solving, logic, and continuous learning—all qualities that feel natural to me. In a way, getting lost in Accounting helped me find my way back to technology.</p>
-                <p>Over the next year, my goal is to become <strong>job-ready in software development</strong> by consistently learning, practising, and building real-world projects. I know the tech industry is constantly changing, so I want to develop the ability to learn, adapt, and grow with it rather than simply learn one skill and stop. I aim to build a strong portfolio, secure my first opportunity in the industry, and grow into a confident full-stack developer, with the long-term goal of venturing into software engineering. I want to build things that are useful, understand the code I write, and let my work speak for itself. After all, I may have started with Accounting because of the money—but I'm choosing software development because I actually enjoy the journey.</p>
-                <p>In addition to my technical skills, I am also focused on developing my soft skills, such as communication, teamwork, and adaptability. I believe that being a well-rounded developer involves not only writing code but also effectively collaborating with others and understanding the needs of users. I am excited about the journey ahead and am determined to make the most of every opportunity to learn and grow in this dynamic field.</p>
-                <p><strong><em>— LondyTech</em></strong></p>
-            </section>
-        <hr>
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>HTML</li>
-                <li>Git</li>
-                <li>GitHub</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-                <li>Problem Solving</li>
-            </ul>
-            </section>
-        <hr>
-        <section id="projects">
-            <h2>Projects</h2>
-            
-            <article>
-                <h3>My First HTML Page</h3>
-                <p>A portfolio website showcasing my learning journey.</p>
-            </article>
 
-            <hr>
-            <section id="contact">
-                <h2>Contact Me</h2>
-        <form>
-            <label>Full Name: </label>
+    <body>
+
+        <header class="header">
+            <a href="#home" class="logo">
+                Londiwe <span>Myeza</span>
+            </a>
+
+        <div class="home-icons">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+
+        <nav class="navbar">
+                <a href="#home">Home</a> 
+                <a href="#about">About</a>  
+                <a href="#skills">Skills</a> 
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+        </nav>
+
+        </a><button class="gradient-btn">Contact Me</button>
+
+          <div class="home-icons">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        
+        </header>
+
+            <section class="home" id="home">
+
+                <div class="home-content">
+                    <h1>Hi, I'm <span>Londiwe Myeza</span></h1>
+                    <h3>I'm a <span>Future Software Developer</span></h3>
+                    <p>Welcome to my portfolio website! I am a passionate and dedicated software developer with a strong interest in creating innovative solutions. My journey in technology has been driven by curiosity, creativity, and a desire to make a positive impact through coding. I am constantly learning and exploring new technologies to enhance my skills and stay up-to-date with industry trends.</p>
+                    <a href="#about" class="btn">Read More</a> 
+                </div>
+
+                <div class="home-img">
+                    <img src="image.jpeg" alt="Londiwe Myeza">
+                </div>
+
+            </section>
+
+            <section class="about" id="about">
+
+                <div class="about-content-img">
+                    <img src="image.jpeg." alt="Londiwe Myeza">
+                </div>
+
+                <div class="about-content">
+                <h2>About <span>Me</span></h2>
+                
+                <p>My name is <span><strong>Londiwe Myeza</strong></span>, born and raised in Durban, South Africa, and I am currently pursuing my <span>Bcom in Accounting</span> at the University of KwaZulu-Natal (UKZN). When I was accepted into UKZN, I had to choose between Accounting and Computer Science. Honestly, I chose Accounting because of the career opportunities and, after doing some research, I was relieved to hear there was less mathematics, especially coming from a Mathematics, Physical Sciences, and Chemistry background. However, as I progressed, I realised that although I could do Accounting, I did not enjoy its repetitive nature. Ironically, the modules I enjoyed most were <span></strong>Information Systems and Technology, Statistics, and Machine Learning</strong></span>, where I not only performed well but also found myself helping other students with their computer skills. That experience made me realise that I may have chosen the practical path, but technology was where my interest really was.</p><br>
+                <p>My interest in technology is not something I discovered overnight. Growing up, I enjoyed building LEGO, solving puzzles, playing games, and figuring out how things worked. I have always been hands-on, curious, and creative, and I enjoy turning ideas into something real. After being financially excluded from university in 2026 due to historical debt, I had to step back and rethink my direction. Instead of seeing this as the end of my journey, I decided to use it as an opportunity to pursue something I genuinely enjoy. Software development combines creativity, problem-solving, logic, and continuous learning all qualities that feel natural to me. In a way, getting lost in Accounting helped me find my way back to technology.</p><br>
+                <p>Over the next year, my goal is to become <span><strong>job-ready in software development</strong></span> by consistently learning, practising, and building real-world projects. I know the tech industry is constantly changing, so I want to develop the ability to learn, adapt, and grow with it rather than simply learn one skill and stop. I aim to build a strong portfolio, secure my first opportunity in the industry, and <span>grow into a confident full-stack developer</span>, with the long-term goal of venturing into <span>software engineering</span>. I want to build things that are useful, understand the code I write, and let my work speak for itself. After all, I may have started with Accounting because of the money but, I'm choosing software development because I actually enjoy the journey.</p><br>
+                <p>In addition to my technical skills, I am also focused on developing my soft skills, such as communication, teamwork, and adaptability. I believe that being a well-rounded developer involves not only writing code but also effectively collaborating with others and understanding the needs of users. I am excited about the journey ahead and am determined to make the most of every opportunity to learn and grow in this dynamic field.</p><br>
+                <p><span><strong><em>— LondyTech</em></strong></span></p>
+               </div>
+
+            </section>
+    
+            <section class="skills" id="skills">
+                <h2 class="heading">Skills</h2>
+
+                <div class="skills-container">
+                    <div class="skills-box">
+                        <div class="skill-info">
+                            <i class="bx bx1-figma"></i>
+                            <h4>ui/ux Design</h4>
+                            <p>i can do so manny things using bwjgc bfgb bgdb </p>
+                        </div>
+                    </div>
+                
+
+                    <div class="skills-box"`>
+                        <div class="skill-info">
+                            <i class="bx bx1-code"></i>
+                            <h4>Frontend Dev</h4>
+                            <p>i can do so manny things using bwjgc bfgb bgdb </p>
+                        </div>
+                    </div>
+
+                    <div class="skills-box">
+                        <div class="skill-info">
+                            <i class="bx bx1-code-curly"></i>
+                            <h4>Backend Dev</h4>
+                            <p>i can do so manny things using bwjgc bfgb bgdb </p>
+                        </div>
+                    </div>
+
+                    <div class="skills-box">
+                        <div class="skill-info">
+                            <i class="bx bx1-code-curly"></i>
+                            <h4>JavaScript</h4>
+                            <p>i can do so manny things using bwjgc bfgb bgdb </p>
+                        </div>
+                    </div>
+
+                    <div class="skills-box">
+                        <div class="skill-info">
+                            <i class="bx bx1-code-curly"></i>
+                            <h4>Problem Solving</h4>
+                            <p>i can do so manny things using bwjgc bfgb bgdb </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        <section class="projects"   id="projects">
+
+            <h2 class="heading">Projects</h2>
+
+            <div class="projects-box">
+                
+                <div class="project-card">
+                    <img src="image.jpeg" alt="project1">
+                    <h3>Projct 1</h3>
+                    <p>This projeect is about how i wstatrrvmhvdfhhdgbvjcfg</p>
+                    <div class="btn">Review Projects</div>
+                </div>
+
+                <div class="project-card">
+                    <img src="image.jpeg" alt="project1">
+                    <h3>Projct 1</h3>
+                    <p>This projeect is about how i wstatrrvmhvdfhhdgbvjcfg</p>
+                    <div class="btn">Review Projects</div>
+                </div>
+
+                <div class="project-card">
+                    <img src="image.jpeg" alt="project1">
+                    <h3>Projct 1</h3>
+                    <p>This projeect is about how i wstatrrvmhvdfhhdgbvjcfg</p>
+                    <div class="btn">Review Projects</div>
+                </div>
+
+                <div class="project-card">
+                    <img src="image.jpeg" alt="project1">
+                    <h3>Projct 1</h3>
+                    <p>This projeect is about how i wstatrrvmhvdfhhdgbvjcfg</p>
+                    <div class="btn">Review Projects</div>
+                </div>
+
+                <div class="project-card">
+                    <img src="image.jpeg" alt="project1">
+                    <h3>Projct 1</h3>
+                    <p>This projeect is about how i wstatrrvmhvdfhhdgbvjcfg</p>
+                    <div class="btn">Review Projects</div>
+                </div>
+
+                <div class="project-card">
+                    <img src="image.jpeg" alt="project1">
+                    <h3>Projct 1</h3>
+                    <p>This projeect is about how i wstatrrvmhvdfhhdgbvjcfg</p>
+                    <div class="btn">Review Projects</div>
+                </div>
+
+            </div>
+<br>
             
-            <input type="text" name="name" placeholder="Enter your name" required><br>
-            <label>Email: </label>  
-            <input type="email" name="email" placeholder="Enter your email" required><br>
-            <label>Country: </label>
-            <input type="text" name="country" placeholder="Enter your country" required><br>    
-            <label>Message: </label><br>
-            <textarea name="message" placeholder="Enter your message"></textarea><br>  
-             <button type="submit">Send</button>
-        </form>
-        </section>
-    </main>
-    <hr>
-    <footer>
-        <p>&copy; 2026 Londiwe Myeza | Built with HTML</p>
-    </footer>
-</body>
+            <section class="contact" id="contact">
+                <h2 class="heading">Contact <span>Me</span></h2>
+                
+             <div class="row">
+                <div class="contact-info-item">
+                    <div class="icon"><i class="fa fa-phone"></i></div>
+                    <h3>Call Me On</h3>
+                    <p>+27 63 657 9656</p>
+                </div>
+                <div class="contact-info-item">
+                    <div class="icon"><i class="fa fa-envelope"></i></div>
+                    <h3>Email</h3>
+                    <p>londiwe.myeza29@gmail.com</p>
+                </div>
+                <div class="contact-info-item">
+                    <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
+                    <h3>Location</h3>
+                    <p>Durban,South Africa</p>
+
+                </div>
+             </div>
+
+             <div>
+                    <h2 class="heading-2">SEND ME AN EMAIL</h2>
+                    <h4>I'm very responsive to mesages.</h4>
+             </div>
+             </div> 
+
+                <form action="#">
+                    <div class="input-group">
+                    <input type="text" placeholder="Full Name">
+                    <input type="email" placeholder="Email">
+                    </div>
+
+                    <div class="input-group">
+                    <input type="text" placeholder="Subject">
+                    </div>
+
+                    <div class="input-group-2">
+                    <textarea name=" " id=" " placeholder="Enter your message" cols="90" rows="10"></textarea>
+                    <button type="submit"class="btn">Send Message</button>
+                    </div>
+
+                </form>
+            </section>
+
+
+            <footer>
+
+                <div class="footer" id="footer">
+
+               <ul class="list">
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+
+                     <li>
+                        <a href="#skills">Skills</a>
+                    </li>
+
+                     <li>
+                        <a href="#projects">Projects</a>
+                     </li>
+
+                     <li>
+                        <a href="#contact">Contact</a>
+                     </li>
+                </ul>
+                </div>
+                <div class="footer">
+                 <p>&copy; 2026 Londiwe Myeza | Built with HTML</p>
+                </div>
+             </footer>
+
+        <script src="script.js"></script>
+
+    </body>
 </html>
