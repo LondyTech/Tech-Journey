@@ -26,7 +26,7 @@ body{
     top: 0;
     left: 0;
     padding: 1.8rem 15%;
-    background:rgba(0, 0, 0, 0.259);
+    background:rgba(0, 0, 0, 0.089);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -45,13 +45,11 @@ body{
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
-
 .logo:hover{
     transform: scale(1.1);
 }
-
 span{
-    background: linear-gradient(250deg, 
+    background: linear-gradient(270deg, 
     #f88eda 10%,
      #da0da0 100%);
      background-clip: text;
@@ -59,7 +57,7 @@ span{
 }
 .navbar a{
     font-size: 1.8rem;
-    color: var(--primary-color);
+    color: var(--text-color);
     margin-left: 4rem;
     font-weight: 500;
     transition: 0.5s ease-in-out;
@@ -85,6 +83,11 @@ span{
 }
 .gradient-btn:hover{
     transform: scale(1.05);
+}
+.header .home-icons{
+    display: none;
+    color: var(--primary-color);
+    font-size: 3rem;
 }
 section{
    min-height: 100vh;
@@ -118,29 +121,15 @@ section{
     line-height: 1.8;
 }
 .home-img img{
-    width: 25vw;
+    width: 26vw;
     border-radius: 50%;
     box-shadow: 0 0 25px var(--primary-color);
     transition: 0.4s ease-in-out;
 }
 .home-img img:hover{
-    box-shadow: 0 0 25px var(--primary-color);
-    transform: scale(1.05);
-}
-.btn-group{
-    padding: 1rem 2rem;
-    font-size: 1.8rem;
-    color: white;
-    border-radius: 3rem;
-    background: linear-gradient(270deg, 
-    #ed9ed6 10%,
-     #da0da0 100%);
-    cursor: pointer;
-    letter-spacing: 1px;
-    transition: 0.3s ease-in-out;
-    border: none;
-    text-wrap: nowrap;
-    margin: 1rem 0;
+    box-shadow: 0 0 25px var(--primary-color),
+                0 0 50px var(--primary-color),
+                0 0 100px var(--primary-color);
 }
 .btn{
     display: inline-block;
@@ -154,9 +143,10 @@ section{
     font-weight: 600;
     transition: 0.3s ease-in-out;
 }
-.btn-group:hover{
+.btn:hover{
     transform: scale(1.05);
-    box-shadow: 0 0 25px var(--primary-color);
+    box-shadow: 0 0 25px var(--primary-color),
+                0 0 50px var(--primary-color);
 }
 .about{
     display: flex;
@@ -165,12 +155,17 @@ section{
     gap: 5rem;
     background: var(--secondary-bg-color);
 }
-.about-content-img img{
-    width: 10vw;
+.about-img img{
+    width: 15vw;
     border-radius: 60%;
     box-shadow: 0 0 25px var(--primary-color);
     transition: 0.4s ease-in-out;
     margin-top: 20rem;
+}
+.about-img img:hover{
+     box-shadow: 0 0 25px var(--primary-color),
+                0 0 50px var(--primary-color),
+                0 0 100px var(--primary-color);
 }
 .about-content h2{
     font-size: 7rem;
@@ -178,10 +173,8 @@ section{
 }
 .about-content p{
     font-size: 1.8rem;
-    font-weight: 500;
-    line-height: 1.8;
+    line-height: 1.5;
     text-align: justify;
-    clear: both;
 }
 ::-webkit-scrollbar{
     width: 20px;
@@ -202,11 +195,11 @@ section{
     color: black;
 }
 .skills h2{
-    color: var(--primary-color);
+    color: var(--text-color);
 }
 .skills-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, mimax(50px, 1fr));
+    grid-template-columns: repeat(auto-fit, mimax(200px, 1fr));
     align-items: center;
     gap: 2.5rem;
 }
@@ -275,12 +268,13 @@ section{
     transition: 0.3s ease;
 }
 .project-card:hover{
-    box-shadow: 0 0 25px var(--primary-color);
+    box-shadow: 0 0 25px var(--primary-color),
+                0 0 50px var(--primary-color);
     transform: scale(1.02);
 }
 .project-card img{
     max-width: 300px;
-    border-radius: 2rem;
+    border-radius: 2em;
     object-fit: cover;
 }
 .project-card h3{
@@ -293,17 +287,18 @@ section{
     background-color: var(--bg-color);
 }
 .contact h2{
-    margin-bottom: 1rem;
+    
     color: var(--text-color);
 }
 .contact .contact-info-item{
-    margin: 50px;
-    justify-content: space-evenly;
-    flex-direction: row;
+    margin: 0 100px 50px;
+    justify-content: center;
     display: inline-block;
-    flex: 0 0 25%;
-    max-width: 25%;
     text-align: center;
+}
+.contact .icon{
+    font-size: 3rem;
+    color: var(--primary-color);
 }
 .contact .contact-info-item h3{
     font-size: 18px;
@@ -317,7 +312,7 @@ section{
     line-height: 25px;
     color: white;
     font-weight: 400;
-    margin-bottom: 3rem;
+   
 }
 .contact .heading-2{
     color: var(--primary-color);
@@ -332,15 +327,12 @@ section{
     margin-bottom: 3rem;
 }
 .contact form{
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
+    display: flex;
+    align-items: normal;
+    justify-content: space-evenly;
     gap: 3rem;
-    margin: 2rem 0;
-    text-align: center;
-    border: var(--primary-color);
-    background-color: var(--bg-color);
-    border-radius: 5rem;
+    margin: 5rem 0;
+    text-align: center;   
 }
 .contact form .input-group input,
 .contact form textarea{
@@ -355,7 +347,7 @@ section{
 }
 .footer{
     background-color: var(--secondary-bg-color);
-    padding: 50px 0;
+    padding: 60px 0;
 }
 .footer ul{
     text-align: center;
@@ -375,7 +367,7 @@ section{
 }
 .footer p{
     text-align: center;
-    margin-top: 5px;
+    margin-top: 10px;
     font-size: 16px;
 }
 
@@ -389,10 +381,11 @@ section{
         right: 0;
         width: 50%;
         padding: 1rem 3rem;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.496);
         border-bottom-left-radius: 2rem;
         border-left: 2px solid var(--primary-color);
         border-bottom: 2px solid var(--primary-color);
+        display: none;
     }
     .navbar a{
         display: block;
