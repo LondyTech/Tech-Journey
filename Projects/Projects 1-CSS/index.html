@@ -1,0 +1,127 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Analytics Dashboard</title>
+    <link rel="stylesheet" href="modern-reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="theme-engine.js" defer></script>
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <h2 class="sidebar__brand">AnalyticsCorp</h2>
+        </aside>
+
+        <header class="header">
+            <h1>Dashboard Overview</h1>
+            <button id="theme-toggle" class="header__btn" aria-label="Toggle visual theme">Toggle Mode</button>
+        </header>
+
+        <main class="main-content">
+            <section class="dashboard-grid">
+                
+                <div class="card-wrapper card-wrapper--wide">
+                    <article class="kpi-card data-chart-card">
+                    <div class="kpi-card__header">
+                    <div>
+                    <h3 style="color: var(--text-muted); font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Sales Performance</h3>
+                    <p style="font-size: 1.5rem; font-weight: 700; margin-top: 0.25rem;">Weekly Revenue</p>
+             </div>
+
+                <!-- Custom Styled Chart Legend -->
+                <div class="chart-legend" style="display: flex; gap: 1rem; font-size: 0.875rem;">
+                <span style="display: flex; align-items: center; gap: 0.5rem;"><i style="display: inline-block; width: 12px; height: 12px; background: var(--accent); border-radius: 3px;"></i> Gross Sales</span>
+                </div>
+                </div>
+
+                 <!-- The Pure CSS Chart Component -->
+                <div class="css-chart-container">
+                 <!-- Y-Axis Scale Values -->
+                <div class="chart-y-axis">
+                    <span>$10k</span>
+                    <span>$7.5k</span>
+                    <span>$5k</span>
+                    <span>$2.5k</span>
+                    <span>$0</span>
+                 </div>
+
+                 <!-- The Grid Canvas Architecture -->
+              <div class="chart-canvas">
+
+                 <!-- Bar 1: Mon (Value: 45%) -->
+
+                    <div class="chart-column" style="--bar-value: 45;" tabindex="0">
+                        <span class="chart-column__tooltip">$4,500</span>
+                    </div>
+
+                 <!-- Bar 2: Tue (Value: 70%) -->
+                    <div class="chart-column" style="--bar-value: 70;" tabindex="0">
+                        <span class="chart-column__tooltip">$7,000</span>
+                    </div>
+
+                 <!-- Bar 3: Wed (Value: 30%) -->
+                    <div class="chart-column" style="--bar-value: 30;" tabindex="0">
+                        <span class="chart-column__tooltip">$3,000</span>
+                    </div>
+
+                    <!-- Bar 4: Thu (Value: 95%) -->
+                    <div class="chart-column" style="--bar-value: 95;" tabindex="0">
+                        <span class="chart-column__tooltip">$9,500</span>
+                    </div>
+
+                    <!-- Bar 5: Fri (Value: 60%) -->
+                    <div class="chart-column" style="--bar-value: 60;" tabindex="0">
+                        <span class="chart-column__tooltip">$6,000</span>
+                    </div>
+                </div>
+
+                <!-- X-Axis Labels -->
+
+                <div class="chart-x-axis">
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                </div>
+            </div>
+        </article>
+    </div>
+
+
+
+
+                <div class="card-wrapper">
+                    <article class="kpi-card">
+                        <div class="kpi-card__body">
+                            <div>
+                                <h3 style="color: var(--text-muted)">Total Revenue</h3>
+                                <p style="font-size: 2rem; font-weight: bold; margin-top: 0.5rem;">$1.2M</p>
+                            </div>
+                            <span style="color: #10b981; font-weight: bold;">+12.4%</span>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="card-wrapper">
+                    <article class="kpi-card">
+                        <div class="kpi-card__body">
+                            <div>
+                                <h3 style="color: var(--text-muted)">Active Users</h3>
+                                <p style="font-size: 2rem; font-weight: bold; margin-top: 0.5rem;">48.2k</p>
+                            </div>
+                            <span style="color: #10b981; font-weight: bold;">+8.1%</span>
+                        </div>
+                    </article>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

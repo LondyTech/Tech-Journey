@@ -1,0 +1,192 @@
+/* style.css */
+:root {
+    --bg-primary: #f8fafc;
+    --bg-surface: #ffffff;
+    --text-primary: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --accent: #2563eb;
+    --grid-mesh: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+}
+
+[data-theme="dark"] {
+    --bg-primary: #0f172a;
+    --bg-surface: #1e293b;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color: #334155;
+    --accent: #3b82f6;
+    --grid-mesh: radial-gradient(circle, #334155 1px, transparent 1px);
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dashboard Shell */
+.app-container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    grid-template-rows: 70px 1fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main";
+    min-height: 100dvh;
+}
+
+.sidebar { grid-area: sidebar; background: var(--bg-surface); border-right: 1px solid var(--border-color); padding: 2rem; }
+.header { grid-area: header; background: var(--bg-surface); border-bottom: 1px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; }
+.main-content { grid-area: main; padding: 2rem; }
+
+/* Grid Layout Engine with Mesh Pattern */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    background-image: var(--grid-mesh);
+    background-size: 20px 20px;
+    padding: 1rem;
+}
+
+/* Container Queries Registration */
+.card-wrapper {
+    container-type: inline-size;
+}
+
+.kpi-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+/* Component shifts layout based on its container size, not screen size */
+@container (min-width: 450px) {
+    .kpi-card__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* --- CSS Grid Data Chart Component Architecture --- */
+
+/* Wide variant control for layout responsive sizing */
+.card-wrapper--wide {
+    grid-column: 1 / -1; /* Forces the chart to stretch across the dashboard wide zones */
+}
+
+.data-chart-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.kpi-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Master Data Grid Alignment Layout */
+.css-chart-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 200px auto;
+    grid-template-areas: 
+        "y-axis canvas"
+        ". x-axis";
+    gap: 1rem;
+    padding-top: 1rem;
+}
+
+/* Y-Axis Label Placement Stack */
+.chart-y-axis {
+    grid-area: y-axis;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-variant-numeric: tabular-nums;
+    padding-right: 0.5rem;
+}
+
+/* X-Axis Horizontal Label Layout */
+.chart-x-axis {
+    grid-area: x-axis;
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    padding-top: 0.5rem;
+}
+
+.chart-x-axis span {
+    width: 100%;
+    text-align: center;
+}
+
+/* 2D Canvas Mapping Layer */
+.chart-canvas {
+    grid-area: canvas;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 100%;
+    border-bottom: 2px solid var(--border-color);
+    /* Creates safe linear background scale markers */
+    background-image: linear-gradient(to top, var(--border-color) 1px, transparent 1px);
+    background-size: 100% 50px;
+    padding: 0 1rem;
+}
+
+/* Individual Bar Engineering Using CSS Variables */
+.chart-column {
+    background-color: var(--accent);
+    width: 12%;
+    min-width: 24px;
+    height: calc(var(--bar-value) * 1%); /* Multiplies input tracking logic variables into scaling metrics */
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover & Keyframe Interaction System */
+.chart-column:hover, .chart-column:focus {
+    background-color: #1d4ed8; /* Darkens emphasis point */
+    transform: scaleY(1.03); /* Slight upward stretch animation */
+    outline: none;
+}
+
+/* Dynamic Interactive Tooltip Module Setup */
+.chart-column__tooltip {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    z-index: 10;
+}
+
+/* Display Tooltip State Action triggers */
+.chart-column:hover .chart-column__tooltip,
+.chart-column:focus .chart-column__tooltip {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}
+
