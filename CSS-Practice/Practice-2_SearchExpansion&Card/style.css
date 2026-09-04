@@ -1,7 +1,16 @@
-body {
+/*=======================================================
+                        STYLING
+=========================================================*/
+
+html {
     padding: 0;
     margin: 0;
+    background: whitesmoke;
 }
+
+/*====================================================
+                searchBar Expansion
+======================================================*/
 
 .search-box {
     padding: 10px;
@@ -40,6 +49,10 @@ body {
     color: transparent;
  }
 
+/*==============================================
+                Card Styling
+===============================================*/
+
 :root {
     --font-main: 'Noto Sans', sans-serif;
     --bg-main:#131417;
@@ -48,18 +61,15 @@ body {
     --username: #b7bbc8;
 }
 
-.screen {
-    background-color: var(--bg-main);
-}
-
 .screen-box {
     background-color: var(--bg-card);
     padding: 5rem 2rem;
     margin: 50px;
-    margin: none;
+    margin: 2em auto;
     max-width: 300px;
     max-height: 320px;
     margin-bottom: 5rem;
+    border-radius: 3em;
 }
 
 .screen-p img{
@@ -109,4 +119,66 @@ body {
 
 .screen-box:hover .card-stats{
     display: flex;
+}
+
+/*================================================
+                    Circle Card
+==================================================*/
+
+.card-container {
+    background: var(--bg-card);
+    margin: 5em auto;
+    max-width: 250px;
+    max-height: 400px;
+    padding: 2rem 1rem;
+}
+
+.card-p img{
+    width: 240px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #b7b7b7;
+}
+
+.card-info {
+    margin: none;
+}
+
+.card-info h2 {
+    color: white;
+}
+
+.card-info h2,
+.card-info h3 {
+    margin: 0;
+}
+
+.card-info h3 {
+    color: #585a5ffe;
+    font-weight: 600;
+}
+
+.card-info p {
+    color: #b7bbc8;
+}
+
+.button {
+   padding: 1px;
+   background: #b7bbc8;
+}
+
+.btn {
+    width: 200px;
+    height: 20px;
+    background: #585a64;
+    color: #b7bbc8;
+    border-radius: .2em;
+    margin-left: 2em;
+    
+}
+
+.btn:hover {
+    background: #181819;
+    transform: scale(1);
 }

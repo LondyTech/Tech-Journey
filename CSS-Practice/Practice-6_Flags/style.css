@@ -1,0 +1,81 @@
+:root {
+    --red-f: #ed2938;
+    --white: #fff;
+    --blue: #002495;
+    --flag-height: 150px;
+    --yellow: #ffce00;
+    --red-g: #de0002;
+    --black: #000000;
+    --flag-height-2: 200px
+}
+
+body {
+    background: #0000002d;
+}
+
+.flag-france {
+    height: var(--flag-height);
+    width: calc(var(--flag-height)*3/2);
+    background: white;
+    margin: 2em auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*.stripe {
+    flex-grow: 1;
+}*/
+
+.red {
+    background: var(--red-f);
+}
+
+.blue {
+    background: var(--blue);
+}
+
+.white {
+    background: var(--white);
+}
+
+.flag-germany {
+    height: var(--flag-height);
+    width: calc(150px*5/3);
+    margin: 2em auto;
+    display: grid;
+}
+
+.black {
+    background: var(--black);
+}
+
+.red {
+    background: var(--red-g);
+}
+
+.yellow {
+    background: var(--yellow);
+}
+
+.flag-madagascar {
+    height: var(--flag-height-2);
+    width: calc(var(--flag-height-2)*3/2);
+    margin: 3em auto;
+    display: flex;
+}
+
+.white-m {
+    background: white;
+    width: calc(var(--flag-height-2)/2);
+}
+
+.red-m {
+    background: red;
+    width: calc(var(--flag-height-2)/2);
+    height: calc(var(--flag-height-2)/2);
+}
+
+.green-m {
+    background: green;
+    height: calc(var(--flag-height-2)/2);
+}
