@@ -1,0 +1,89 @@
+<!-- canvas-layout.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaS Design Canvas Application</title>
+    <!-- Reusing your modern reset to keep the codebase clean -->
+    <link rel="stylesheet" href="modern-reset.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main App Shell -->
+    <div class="studio-container">
+        
+        <!-- 1. Top Toolbar (Flexbox Layout) -->
+        <nav class="studio-toolbar" aria-label="Design tools">
+            <div class="toolbar__group">
+                <button class="toolbar__btn toolbar__btn--active" title="Select Tool (V)">Select</button>
+                <button class="toolbar__btn" title="Rectangle Tool (R)">Rectangle</button>
+                <button class="toolbar__btn" title="Circle Tool (O)">Circle</button>
+                <button class="toolbar__btn" title="Text Tool (T)">Text</button>
+            </div>
+            <div class="toolbar__group">
+                <span class="zoom-indicator">100%</span>
+            </div>
+        </nav>
+
+        <!-- 2. Left Sidebar: Layers Panel (Vertical Scrolling Stack) -->
+        <aside class="studio-sidebar sidebar--layers">
+            <div class="panel-header">
+                <h2>Layers</h2>
+            </div>
+            <ul class="layers-list">
+                <li class="layers-item layers-item--active">
+                    <span class="layers-item__icon">▱</span>
+                    <span class="layers-item__name">Hero_Background</span>
+                </li>
+                <li class="layers-item">
+                    <span class="layers-item__icon">▰</span>
+                    <span class="layers-item__name">Call_To_Action_Button</span>
+                </li>
+                <li class="layers-item">
+                    <span class="layers-item__icon">Text</span>
+                    <span class="layers-item__name">Main_Heading_Text</span>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- 3. Central Workspace: The Infinite Vector Canvas -->
+        <main class="studio-workspace">
+            <div class="vector-canvas">
+                <!-- Mock Shape Object inside Canvas to show layout boundaries -->
+                <div class="canvas-element element--selected" style="top: 150px; left: 200px; width: 320px; height: 180px;">
+                    <div class="resize-handle handle--top-left"></div>
+                    <div class="resize-handle handle--top-right"></div>
+                    <div class="resize-handle handle--bottom-left"></div>
+                    <div class="resize-handle handle--bottom-right"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 4. Right Sidebar: Properties Panel (Data Inputs) -->
+        <aside class="studio-sidebar sidebar--properties">
+            <div class="panel-header">
+                <h2>Properties</h2>
+            </div>
+            <section class="properties-group">
+                <h3>Alignment</h3>
+                <div class="align-grid">
+                    <button class="align-btn" title="Align Left">Left</button>
+                    <button class="align-btn" title="Align Center">Center</button>
+                    <button class="align-btn" title="Align Right">Right</button>
+                </div>
+            </section>
+            <section class="properties-group">
+                <h3>Dimensions</h3>
+                <div class="dimension-inputs">
+                    <label>W: <input type="text" value="320px" readonly></label>
+                    <label>H: <input type="text" value="180px" readonly></label>
+                </div>
+            </section>
+        </aside>
+
+    </div>
+
+</body>
+</html>

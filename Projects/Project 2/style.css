@@ -1,0 +1,175 @@
+/* canvas-style.css */
+
+/* Global Styling Design Tokens */
+:root {
+    --studio-bg: #1e1e1e;
+    --panel-bg: #2c2c2c;
+    --workspace-bg: #141414;
+    --border-studio: #3c3c3c;
+    --text-studio: #e0e0e0;
+    --text-muted: #8c8c8c;
+    --studio-accent: #0c8ce9;
+    --grid-line-color: rgba(255, 255, 255, 0.04);
+}
+
+body {
+    background-color: var(--studio-bg);
+    color: var(--text-studio);
+    overflow: hidden; /* Stops the overall browser screen from showing scroll bars */
+}
+
+/* Master 2D Grid Layout Engine */
+.studio-container {
+    display: grid;
+    grid-template-columns: 240px 1fr 280px;
+    grid-template-rows: 48px 1fr;
+    grid-template-areas: 
+        "toolbar toolbar toolbar"
+        "sidebar-left workspace sidebar-right";
+    height: 100dvh; /* Force layout to match standard app viewports precisely */
+}
+
+/* Toolbar Alignment (Flexbox Row Setup) */
+.studio-toolbar {
+    grid-area: toolbar;
+    background-color: var(--panel-bg);
+    border-bottom: 1px solid var(--border-studio);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 20;
+}
+
+.toolbar__group {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.toolbar__btn {
+    background: transparent;
+    border: none;
+    color: var(--text-studio);
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.toolbar__btn:hover { background-color: var(--border-studio); }
+.toolbar__btn--active { background-color: var(--studio-accent); }
+
+/* Sidebar Panels (Scroll Locking Engine) */
+.studio-sidebar {
+    background-color: var(--panel-bg);
+    border-color: var(--border-studio);
+    border-style: solid;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Allow sidebars to scroll individually if lists grow long */
+}
+
+.sidebar--layers { grid-area: sidebar-left; border-width: 0 1px 0 0; }
+.sidebar--properties { grid-area: sidebar-right; border-width: 0 0 0 1px; }
+
+.panel-header {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--border-studio);
+}
+
+.panel-header h2 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+/* Custom Vector Canvas Grid Pattern Math [1, 2] */
+.studio-workspace {
+    grid-area: workspace;
+    background-color: var(--workspace-bg);
+    overflow: auto; /* Allows dragging and panning around canvas shapes */
+    position: relative;
+}
+
+.vector-canvas {
+    width: 3000px;  /* Giant canvas workspace zone simulating professional scopes */
+    height: 3000px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    /* Using Linear Gradients to mathematically generate a pixel graph-grid [1, 2] */
+    background-image: 
+        linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
+    background-size: 20px 20px; /* Dictates graph spacing square boundaries */
+}
+
+/* Visual Mock Element Setup inside Workspace Canvas */
+.canvas-element {
+    position: absolute;
+    background-color: rgba(12, 140, 233, 0.1);
+    border: 2px solid var(--studio-accent);
+}
+
+/* Design Workspace Component Selection Handles System */
+.resize-handle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #ffffff;
+    border: 2px solid var(--studio-accent);
+    border-radius: 2px;
+}
+
+.handle--top-left { top: -5px; left: -5px; cursor: nwse-resize; }
+.handle--top-right { top: -5px; right: -5px; cursor: nesw-resize; }
+.handle--bottom-left { bottom: -5px; left: -5px; cursor: nesw-resize; }
+.handle--bottom-right { bottom: -5px; right: -5px; cursor: nwse-resize; }
+
+/* Item Listing Subcomponents Layout definitions */
+.layers-list { list-style: none; padding: 0.5rem; }
+.layers-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.layers-item:hover { background-color: rgba(255,255,255,0.02); }
+.layers-item--active { background-color: rgba(12, 140, 233, 0.15); color: #fff; }
+.layers-item__icon { color: var(--studio-accent); font-weight: bold; }
+
+/* Right Property Panels Components Input layouts */
+.properties-group { padding: 1rem; border-bottom: 1px solid var(--border-studio); }
+.properties-group h3 { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+
+.align-grid { display: flex; gap: 0.25rem; }
+.align-btn {
+    flex: 1;
+    background: var(--border-studio);
+    border: none;
+    color: var(--text-studio);
+    padding: 0.25rem;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dimension-inputs { display: flex; gap: 0.5rem; }
+.dimension-inputs label { font-size: 0.75rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.25rem; }
+.dimension-inputs input {
+    background: var(--studio-bg);
+    border: 1px solid var(--border-studio);
+    color: var(--text-studio);
+    padding: 0.25rem;
+    width: 60px;
+    border-radius: 4px;
+    text-align: center;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Analytics Dashboard Architecture</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- 1. The Global CSS Reset (Prevents browser layout bugs) -->
+<link rel="stylesheet" href="modern-reset.css">
+
+<!-- 2. Your Application Tokens & Layout Layout Core -->
+<link rel="stylesheet" href="style.css">
+
+<!-- 3. Blocking Script Injection (Prevents Theme Flash Syndrome) -->
+<script src="theme-engine.js" defer></script>
+
+
+
+
+</head>
+<body>
+
+  <!-- App Shell Container -->
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" aria-label="Main Navigation">
+      <div class="sidebar__brand">
+        <div class="sidebar__logo"></div>
+        <span class="sidebar__title">AuraMetrics</span>
+      </div>
+      <nav class="sidebar__nav">
+        <ul class="sidebar__menu">
+          <li class="sidebar__item"><a href="#" class="sidebar__link sidebar__link--active" aria-current="page">Dashboard</a></li>
+          <li class="sidebar__item"><a href="#" class="sidebar__link">Analytics</a></li>
+          <li class="sidebar__item"><a href="#" class="sidebar__link">Real-time Metrics</a></li>
+          <li class="sidebar__item"><a href="#" class="sidebar__link">System Logs</a></li>
+          <li class="sidebar__item"><a href="#" class="sidebar__link">Settings</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Top Navigation Header -->
+    <header class="header">
+      <div class="header__search">
+        <input type="search" placeholder="Query system diagnostics..." class="header__search-input" aria-label="Search dashboard">
+      </div>
+      <div class="header__actions">
+        <button class="btn btn--icon" id="theme-toggle" aria-label="Toggle system theme">🌓</button>
+        <div class="header__profile">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="User Profile" class="header__avatar">
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Workspace Frame -->
+    <main class="main-content">
+      
+      <!-- Dashboard View Header -->
+      <header class="view-header">
+        <div class="view-header__summary">
+          <h1 class="view-header__title">System Diagnostics</h1>
+          <p class="view-header__subtitle">Real-time enterprise cluster performance analytics</p>
+        </div>
+        <div class="view-header__actions">
+          <button class="btn btn--secondary">Export Ledger</button>
+          <button class="btn btn--primary">Deploy New Nodes</button>
+        </div>
+      </header>
+
+      <!-- KPI Data-Dense Deck Matrix (CSS Grid) -->
+      <section class="kpi-grid" aria-label="Key Performance Indicators">
+        
+        <!-- KPI Card 1 -->
+        <article class="card kpi-card">
+          <div class="kpi-card__header">
+            <span class="kpi-card__title">Network Ingestion Velocity</span>
+            <span class="badge badge--success">+14.2%</span>
+          </div>
+          <div class="kpi-card__body">
+            <span class="kpi-card__metric">742.8 GB/s</span>
+          </div>
+          <div class="kpi-card__footer">
+            <div class="kpi-card__chart-placeholder kpi-card__chart-placeholder--gradient-1"></div>
+          </div>
+        </article>
+
+        <!-- KPI Card 2 -->
+        <article class="card kpi-card">
+          <div class="kpi-card__header">
+            <span class="kpi-card__title">Compute Allocation</span>
+            <span class="badge badge--danger">+5.8%</span>
+          </div>
+          <div class="kpi-card__body">
+            <span class="kpi-card__metric">89.4%</span>
+          </div>
+          <div class="kpi-card__footer">
+            <div class="kpi-card__chart-placeholder kpi-card__chart-placeholder--gradient-2"></div>
+          </div>
+        </article>
+
+        <!-- KPI Card 3 -->
+        <article class="card kpi-card">
+          <div class="kpi-card__header">
+            <span class="kpi-card__title">Database Read Latency</span>
+            <span class="badge badge--success">-3.1ms</span>
+          </div>
+          <div class="kpi-card__body">
+            <span class="kpi-card__metric">1.84 ms</span>
+          </div>
+          <div class="kpi-card__footer">
+            <div class="kpi-card__chart-placeholder kpi-card__chart-placeholder--gradient-3"></div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- Component-Responsive Composite Panels -->
+      <section class="dashboard-panels">
+        
+        <!-- Primary Analytical Canvas Component -->
+        <div class="card panel panel--primary">
+          <div class="panel__header">
+            <h2 class="panel__title">Cluster Load Distribution History</h2>
+          </div>
+          <div class="panel__content">
+            <div class="vector-mesh-mock"></div>
+          </div>
+        </div>
+
+        <!-- Secondary Log Stream Component -->
+        <div class="card panel panel--secondary">
+          <div class="panel__header">
+            <h2 class="panel__title">Real-time Threat Mitigation Logs</h2>
+          </div>
+          <div class="panel__content">
+            <ul class="log-stream">
+              <li class="log-stream__item log-stream__item--warning">
+                <span class="log-stream__timestamp">15:28:14</span>
+                <span class="log-stream__message">Subgrid payload mismatch isolated on Cluster-B Node-4</span>
+              </li>
+              <li class="log-stream__item log-stream__item--success">
+                <span class="log-stream__timestamp">15:24:02</span>
+                <span class="log-stream__message">Linear-gradient hardware render matrix initialized successfully</span>
+              </li>
+              <li class="log-stream__item log-stream__item--danger">
+                <span class="log-stream__timestamp">15:19:55</span>
+                <span class="log-stream__message">IP packet drop burst surpassed SLA threshold on WAN boundary</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>
